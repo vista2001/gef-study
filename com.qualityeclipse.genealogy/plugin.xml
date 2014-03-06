@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.qualityeclipse.genealogy.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.qualityeclipse.genealogy.Perspective"
+            id="com.qualityeclipse.genealogy.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.qualityeclipse.gef"
+            name="GEF Book">
+      </category>
+      <view
+            category="com.qualityeclipse.gef"
+            class="com.qualityeclipse.genealogy.view.GenealogyView"
+            id="com.qualityeclipse.genealogy.view"
+            name="Genealogy"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.qualityeclipse.genealogy.perspective">
+         <view
+               id="com.qualityeclipse.genealogy.view"
+               minimized="false"
+               ratio="0.95"
+               relationship="stack"
+               relative="org.eclipse.ui.views.TaskList"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
